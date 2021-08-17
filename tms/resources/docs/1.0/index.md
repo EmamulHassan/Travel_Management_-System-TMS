@@ -1,2 +1,4 @@
-- ## Get Started
+- ## TMS
     - [Overview](/{{route}}/{{version}}/overview)
+    - [Installation](/{{route}}/{{version}}/installation)
+    - [Admin Template](/{{route}}/{{version}}/admin_template)
