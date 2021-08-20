@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard') ->name('admin.dashboard');
+    // Route::gtoup(['prefix'=>'branch'],function(){
 
+    // });
 });
