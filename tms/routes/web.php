@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard') ->name('admin.dashboard');
-    Route::gtoup(['prefix'=>'branch'],function(){
+    Route::get(['prefix'=>'branch'],function(){
         Route::get('/manage','App\Http\Controllers\Backend\BranchController@index')->name('branch.manage');
         Route::get('/create','App\Http\Controllers\Backend\BranchController@create')->name('branch.create');
         Route::post('/store','App\Http\Controllers\Backend\BranchController@store')->name('branch.store');
