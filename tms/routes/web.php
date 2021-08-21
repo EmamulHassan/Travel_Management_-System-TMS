@@ -18,5 +18,13 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard') ->name('admin.dashboard');
+    Route::group(['prefix' => 'mytask'], function(){
+        Route::get('/manage', 'App\Http\Controllers\Backend\TaskController@index') ->name('task.manage');
+        Route::get('/create', 'App\Http\Controllers\Backend\TaskController@create') ->name('task.create');
+    
+    });
+});
 
+Route::get('/order', function () {
+    return view('order');
 });
