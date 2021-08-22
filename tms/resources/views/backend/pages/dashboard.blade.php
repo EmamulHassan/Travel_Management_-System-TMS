@@ -5,11 +5,11 @@
         <i class="icon ion-ios-home-outline"></i>
         <div>
           <h4>Dashboard</h4>
-          <p class="mg-b-0">Do bigger things with Bracket plus, the responsive bootstrap 4 admin template.</p>
+          <p class="mg-b-0">Travel With TMS</p>
         </div>
       </div>
 
-      <div class="br-pagebody">
+      {{-- <div class="br-pagebody">
         <div class="row row-sm">
           <div class="col-sm-6 col-xl-3">
             <div class="bg-info rounded overflow-hidden">
@@ -358,7 +358,7 @@
           </div><!-- col-4 -->
         </div><!-- row -->
 
-      </div><!-- br-pagebody -->
+      </div><!-- br-pagebody --> --}}
 
 
 @endsection

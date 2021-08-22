@@ -1,5 +1,5 @@
     <!-- ########## START: LEFT PANEL ########## -->
-    <div class="br-logo"><a href="{{route('admin.dashboard')}}"><span>[</span>e <i>Mart</i><span>]</span></a></div>
+    <div class="br-logo"><a href="{{route('admin.dashboard')}}"><span>[</span><i>TMS</i><span>]</span></a></div>
     <div class="br-sideleft sideleft-scrollbar">
       <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
       <ul class="br-sideleft-menu">
@@ -23,7 +23,7 @@
 
           </ul>
         </li>
-        <li class="br-menu-item">
+        {{-- <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">UI Elements</span>
@@ -193,7 +193,7 @@
           </div>
           <span class="peity-bar" data-peity='{ "fill": ["#9C7846"], "height": 35, "width": 60 }'>3,12,7,9,2,3,4,5,2</span>
         </div><!-- info-list-item -->
-      </div><!-- info-list -->
+      </div><!-- info-list --> --}}
 
       <br>
     </div><!-- br-sideleft -->
