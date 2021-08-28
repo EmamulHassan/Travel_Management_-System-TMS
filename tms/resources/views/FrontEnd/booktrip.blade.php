@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,10 +70,9 @@
 
     <div class="container">
 
-        <form name="orderInfo" method="POST" onsubmit="return validateForm()">
-      
-          <div class="container">
-
+      <form  method="post"  action=" {{url('/booktrip')}} ">
+        {{csrf_field()}}
+       
           <p style="margin-bottom: 10px;">Please Enter Booking Informations.</p>
           <hr>
 
@@ -117,41 +117,17 @@
             </select><br><br>
 
 
-        <button type="submit" id="submit" name="submit">Confirm</button>
-        <a href="index.php#cardholder"><button type="button" class="cancelbtn">Check Other Offers?</button></a>
+        <button class="btn btn-primary" >Confirm</button>
+     
 
-        </div>
+        
       
 
       
           <!-- <input type="submit" id="submit" name="submit" value="Submit"> -->
 
       
-        </form>
-
-        <?php
-            if(isset($_POST['submit'])) 
-            {
-                $name           = $_POST['name'];
-                $phone          = $_POST['phone'];
-                $email          = $_POST['email'];
-                $dateorder      = date('Y-m-d', strtotime($_POST['dateorder']));
-                $checkinTime    = $_POST['checkinTime'];
-                $room           = $_POST['room'];
-        
-               $query = "INSERT INTO orders(name, phone, email, dateorder, checkinTime, price) 
-                    VALUES('$name', '$phone', '$email', '$dateorder', '$checkinTime', '$room')"; 
-
-               $bookroom = mysqli_query($connect, $query);
-
-                if ($bookroom)
-                {
-                    header("Location: orderconfirm.php");
-                    
-                }
-            } 
-
-        ?>
+      </form>
 
 
 
@@ -190,19 +166,6 @@
 
       </footer>
     <!-- footer end -->
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="js/main.js"></script>      
 
   </body>
 </html>

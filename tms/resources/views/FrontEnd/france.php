@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-    <title>Order Information</title>
+    <title>Book France Trip</title>
   </head>
   <body>
 
@@ -41,7 +40,7 @@
                 <a class="nav-link" href="#services">Services</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link disabled" href="#cardholder">Book a Travel</a>
+                <a class="nav-link" href="#cardholder">Book a Travel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact us</a>
@@ -63,100 +62,45 @@
 
     </header>
 
-      <!-- book infomation start -->
-      <h2 style="text-align: center; padding: 20px;">Enter Purchase Information</h2>
+      <!-- single room details start -->
 
+      <h1 style="text-align : center; margin : 50px 0px">France(Starts from 80000BDT/ Person)</h1>
 
-    <div class="container">
+      <div class="container" style="padding-bottom: 20px">
+        <!-- <div class="row" style="padding-bottom: 20px"> -->
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/fr1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/fr1.1.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        <!-- </div> -->
 
-        <form name="orderInfo" method="POST" onsubmit="return validateForm()">
-      
-          <div class="container">
-
-          <p style="margin-bottom: 10px;">Please Enter Booking Informations.</p>
-          <hr>
-
-          <label id="textview" for="name"><b>Name: </b></label>
-          <input type="text" id="name" name="name" placeholder="Input Your Name..." ><br>
-
-
-          <label for="phone"><b>Phone No: </b></label>
-          <input type="phone" id="phone" name="phone" placeholder="Enter Your Phone Number..."><br>
-
-
-          <label for="email"><b>Email(Optional): </b></label>
-          <input type="email" id="email" name="email" placeholder="Enter Your Email..."><br><br>
-
-
-          <label for="dateofOrder"><b>Select Date: </b></label>
-          <input type="date" id="dateorder" name="dateorder"><br><br>
-
-          <label for="checkinTime"><b>Preferred Flight Time: </b></label>
-            <select id="checkinTime" name="checkinTime">
-              <option value="selectcheckinTime">Select a Time</option>
-              <option value="02.00am">02.00am</option>
-              <option value="04.00am">04.00am</option>
-              <option value="06.00am">06.00am</option>
-              <option value="08.00am">08.00am</option>
-              <option value="10.00am">10.00am</option>
-              <option value="12.00pm">12.00pm</option>
-              <option value="02.00pm">02.00pm</option>
-              <option value="04.00pm">04.00pm</option>
-              <option value="06.00pm">06.00pm</option>
-              <option value="08.00pm">08.00pm</option>
-              <option value="10.00pm">10.00pm</option>
-              <option value="12.00am">12.00am</option>
-            </select><br><br>
-
-          <label for="trip"><b>Please Select the Trip Location: </b></label>
-            <select id="room" name="trip">
-              <option value="selecttrip">Select Trip Location</option>
-              <option value="Single Room - 6000BDT">United States - 60000/-</option>
-              <option value="Deluxe Room - 8000BDT">United Kingdom - 70000/-</option>
-              <option value="Double Room - 10000BDT">France - 80000/-</option>
-            </select><br><br>
-
-
-        <button type="submit" id="submit" name="submit">Confirm</button>
-        <a href="index.php#cardholder"><button type="button" class="cancelbtn">Check Other Offers?</button></a>
-
-        </div>
-      
-
-      
-          <!-- <input type="submit" id="submit" name="submit" value="Submit"> -->
-
-      
-        </form>
-
-        <?php
-            if(isset($_POST['submit'])) 
-            {
-                $name           = $_POST['name'];
-                $phone          = $_POST['phone'];
-                $email          = $_POST['email'];
-                $dateorder      = date('Y-m-d', strtotime($_POST['dateorder']));
-                $checkinTime    = $_POST['checkinTime'];
-                $room           = $_POST['room'];
-        
-               $query = "INSERT INTO orders(name, phone, email, dateorder, checkinTime, price) 
-                    VALUES('$name', '$phone', '$email', '$dateorder', '$checkinTime', '$room')"; 
-
-               $bookroom = mysqli_query($connect, $query);
-
-                if ($bookroom)
-                {
-                    header("Location: orderconfirm.php");
-                    
-                }
-            } 
-
-        ?>
-
-
+        <h5 class="card-title"><b>France</b></h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+        <p class="card-text"><b>Starts from: </b> 80000BDT/ Person</p>
+        <a href="booktrip.php" class="btn btn-success btn">Book France Trip Now</a>
+        <a href="index.php#cardholder" class="btn btn-success btn">Check Other Offers?</a>
 
       </div>
-      <!-- book infomation end -->
+
+      <!-- single room details end -->
 
 
       <!-- footer start -->
@@ -189,7 +133,7 @@
         </div>
 
       </footer>
-    <!-- footer end -->
+      <!-- footer end -->
 
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -201,8 +145,5 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="js/main.js"></script>      
-
   </body>
 </html>
