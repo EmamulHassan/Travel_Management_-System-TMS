@@ -42,7 +42,7 @@
                 <a class="nav-link" href="#services">Services</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link disabled" href="#cardholder">Book a Travel</a>
+                <a class="nav-link disabled" href="{{route('booktrip')}}">Book a Travel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact us</a>
@@ -51,7 +51,7 @@
                 <a class="nav-link" href="feedbackwrite.php">Feedback</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="trackOrder.php">Track Your Order</a>
+                <a class="nav-link" href="{{route('trackOrder')}}">Track Your Order</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="admin/index.php">Admin</a>

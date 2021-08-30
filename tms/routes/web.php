@@ -59,5 +59,6 @@ Route::get('/booktrip', 'App\Http\Controllers\BackEnd\TaskController@booktrip')-
 Route::post('/store', 'App\Http\Controllers\BackEnd\TaskController@store')->name('store');
 
 Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\TaskController@trackOrder')->name('trackOrder');
+Route::get('/search', 'App\Http\Controllers\BackEnd\TaskController@search')->name('search');
 
 

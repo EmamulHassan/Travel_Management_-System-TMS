@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Backend\TaskModel;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -83,7 +84,29 @@ class TaskController extends Controller
     {
         //
     }
+    public function search(Request $request)
+    {
+        if(isset($_GET['query']))
+           {
+             $search_text= $_GET['query'] ;
+             $tasks=DB::table('task_models')->where('id','LIKE','%'.$search_text.'%')->paginate(2);
+            // return view('search')
+            return view('FrontEnd.trackOrder', compact('tasks'));
 
+
+           }
+        else
+            {
+                return view('trackOrder');
+            }   
+
+
+
+
+
+       // $tasks = TaskModel::orderBy('id', 'desc')->get();
+      //  return view('FrontEnd.trackOrder', compact('tasks'));
+    }
     /**
      * Remove the specified resource from storage.
      *
