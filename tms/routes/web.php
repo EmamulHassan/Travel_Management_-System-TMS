@@ -37,6 +37,7 @@ Route::get('/', function () {
 ///Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\PageController@trackOrder')->name('trackOrder');
 
 Route::get('/booktrip', 'App\Http\Controllers\BackEnd\TaskController@booktrip')->name('booktrip');
+Route::post('/store', 'App\Http\Controllers\BackEnd\TaskController@store')->name('store');
 
 Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\TaskController@trackOrder')->name('trackOrder');
 

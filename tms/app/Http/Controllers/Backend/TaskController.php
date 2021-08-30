@@ -37,7 +37,17 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $task = new TaskModel();
+        $task->name = $request->name;
+        $task->phone = $request->phone;
+        $task->email = $request->email;
+        $task->dateorder = $request->dateorder;
+        $task->checkinTime = $request->checkinTime;
+        $task->price = $request->trip;
+        
+        $task->save();
+        return redirect()->route('trackOrder');
+    
     }
 
     /**

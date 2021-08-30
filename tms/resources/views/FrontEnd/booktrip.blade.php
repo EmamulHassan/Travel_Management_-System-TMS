@@ -21,7 +21,7 @@
   <body>
 
     <header>
-
+      
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
@@ -70,8 +70,8 @@
 
     <div class="container">
 
-      <form  method="post"  action=" {{url('/booktrip')}} ">
-        {{csrf_field()}}
+      <form action=" {{route('store')}} " method="POST"  >
+        @csrf
        
           <p style="margin-bottom: 10px;">Please Enter Booking Informations.</p>
           <hr>
