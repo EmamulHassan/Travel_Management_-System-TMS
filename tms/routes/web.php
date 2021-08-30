@@ -32,8 +32,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/booktrip', 'App\Http\Controllers\booktrip@booktrip') ;
+///Route::get('/booktrip', 'App\Http\Controllers\BackEnd\PageController@booktrip')->name('booktrip');
 
-Route::post('/booktrip', 'App\Http\Controllers\booktrip@store') ->name('booktrip');
+///Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\PageController@trackOrder')->name('trackOrder');
+
+Route::get('/booktrip', 'App\Http\Controllers\BackEnd\TaskController@booktrip')->name('booktrip');
+
+Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\TaskController@trackOrder')->name('trackOrder');
 
 
