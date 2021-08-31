@@ -89,7 +89,7 @@ class TaskController extends Controller
         if(isset($_GET['query']))
            {
              $search_text= $_GET['query'] ;
-             $tasks=DB::table('task_models')->where('id','LIKE','%'.$search_text.'%')->paginate(2);
+             $tasks=DB::table('task_models')->where('id',$search_text)->paginate(1);
             // return view('search')
             return view('FrontEnd.trackOrder', compact('tasks'));
 
