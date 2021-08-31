@@ -14,7 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', 'App\Http\Controllers\BackEnd\homeController@index')->name('homepage');
 
+///Route::get('/booktrip', 'App\Http\Controllers\BackEnd\PageController@booktrip')->name('booktrip');
+
+///Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\PageController@trackOrder')->name('trackOrder');
+
+
+
+
+
+Route::get('/booktrip', 'App\Http\Controllers\BackEnd\TaskController@booktrip')->name('booktrip');
+Route::post('/store', 'App\Http\Controllers\BackEnd\TaskController@store')->name('store');
+
+Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\TaskController@trackOrder')->name('trackOrder');
+Route::get('/search', 'App\Http\Controllers\BackEnd\TaskController@search')->name('search');
 
 
 /*
@@ -28,9 +42,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('FrontEnd.index');
-});
+
+
 
 //this routes are for branch management
 Route::group(['prefix' => 'admin'], function(){
@@ -47,18 +60,5 @@ Route::group(['prefix' => 'admin'], function(){
 });
 
 
-///Route::get('/booktrip', 'App\Http\Controllers\BackEnd\PageController@booktrip')->name('booktrip');
-
-///Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\PageController@trackOrder')->name('trackOrder');
-
-
-
-
-
-Route::get('/booktrip', 'App\Http\Controllers\BackEnd\TaskController@booktrip')->name('booktrip');
-Route::post('/store', 'App\Http\Controllers\BackEnd\TaskController@store')->name('store');
-
-Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\TaskController@trackOrder')->name('trackOrder');
-Route::get('/search', 'App\Http\Controllers\BackEnd\TaskController@search')->name('search');
 
 
