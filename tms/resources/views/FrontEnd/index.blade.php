@@ -22,8 +22,8 @@
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="">
-                <img src="{{asset('backend/img/logo.png')}}" style="min-width: 0px; height: 40px" alt="logo">
+          <a class="logo" href="{{route('homepage')}}">
+                <img src="{{asset('FrontEnd/images/logo .png')}}" style="min-width: 0px; height: 40px" alt="logo">
               </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,15 +31,15 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home
+                <a class="nav-link" href="{{route('homepage')}}">Home
                       <span class="sr-only">(current)</span>
                     </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#services">Services</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link disabled" href="{{route('booktrip')}}">Book a Travel</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('booktrip')}}">Book A Travel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact us</a>

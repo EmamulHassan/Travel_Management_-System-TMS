@@ -25,8 +25,8 @@
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="index.php">
-                <img src="" style="min-width: 50px; height: 30px" alt="logo">
+          <a class="logo" href="{{route('homepage')}}">
+                <img src="{{asset('FrontEnd/images/logo .png')}}" style="min-width: 50px; height: 30px" alt="logo">
               </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Home
+                <a class="nav-link" href="{{route('homepage')}}">Home
                       <span class="sr-only">(current)</span>
                     </a>
               </li>

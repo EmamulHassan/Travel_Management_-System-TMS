@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <!-- data table css -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!-- css files -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -23,8 +23,8 @@
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="index.php">
-                <img src="images/logo.png" style="min-width: 50px; height: 30px" alt="logo">
+          <a class="logo" href="{{route('homepage')}}">
+                <img src="{{asset('FrontEnd/images/logo .png')}}" style="min-width: 50px; height: 30px" alt="logo">
               </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Home
+                <a class="nav-link" href="{{route('homepage')}}">Home
                       <span class="sr-only">(current)</span>
                     </a>
               </li>
@@ -100,7 +100,7 @@
   <tr>
     <td>{{ $task->id}}</td>
     <td>{{ $task->name}}</td>
-    <td>{{ $task->phone}}</td> 
+    <td>{{ $task->phone}}</td>
     <td>{{ $task->email}}</td>
     <td>{{ $task->dateorder}}</td>
     <td>{{ $task->checkinTime}}</td>
@@ -115,7 +115,7 @@
       <!-- footer start -->
       <footer class="bg-dark text-center text-white" id="footer" style="position: fixed; width: 100%; bottom: 0">
         <!-- Grid container -->
-    
+
         <div class="container pt-4 pb-2">
           <div class="col-auto">
             <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
