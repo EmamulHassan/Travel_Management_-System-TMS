@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <!-- data table css -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!-- css files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
     <title>Homepage</title>
   </head>
@@ -22,8 +22,8 @@
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="index.php">
-                <img src="images/logo.png" style="min-width: 0px; height: 40px" alt="logo">
+          <a class="logo" href="">
+                <img src="{{asset('backend/img/logo.png')}}" style="min-width: 0px; height: 40px" alt="logo">
               </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,8 +38,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="#services">Services</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#cardholder">Book a Travel</a>
+              <li class="nav-item active">
+                <a class="nav-link disabled" href="{{route('booktrip')}}">Book a Travel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact us</a>
@@ -48,7 +48,7 @@
                 <a class="nav-link" href="feedbackwrite.php">Feedback</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="trackOrder.php">Track Your Order</a>
+                <a class="nav-link" href="{{route('trackOrder')}}">Track Your Order</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="admin/index.php">Admin</a>
@@ -66,7 +66,7 @@
       <marquee behavior="slide" direction="down" scrollamount="7"style="font-size:30px">Your One Stop <span style="color:#0058e693">Companion</span></marquee>
       <marquee behavior="slide" direction="down" scrollamount="7" style="font-size:30px">Choosing Your Next <span  style="color -->
 
-    <div style="height: 70vh; padding-left: 10%; padding-top:10%; background-color:#faf9f6; background-attachment:fixed; line-height:1.6; background-image: url('images/bann.jpg'); background-repeat: no-repeat; background-size: 100% 100%">
+    <div style="height: 70vh; padding-left: 10%; padding-top:10%; background-color:#faf9f6; background-attachment:fixed; line-height:1.6; background-image: url('{{asset('FrontEnd/images/bann.jpg')}}'); background-repeat: no-repeat; background-size: 100% 100%">
       <marquee behavior="slide" direction="up" scrollamount="25">
         <h1 style="font-size:50px; color: white">BookFast.</h1>
         <h3 style="font-size:40px; color: skyblue">Your One Stop <span style="color: white">Companion.</span></h3>
@@ -85,21 +85,21 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/car1.jpg" class="d-block w-100" alt="...">
+              <img src="{{asset('FrontEnd/images/car1.jpg')}}" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Lorem.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="images/car2.jpg" class="d-block w-100" alt="...">
+              <img src="{{asset('FrontEnd/images/car2.jpg')}}" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Lorem.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="images/car3.jpg" class="d-block w-100" alt="...">
+              <img src="{{asset('FrontEnd/images/car3.jpg')}}" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Lorem.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -125,7 +125,7 @@
           <div class="row">
             <div class="col-lg-4 mb-4">
             <div class="card">
-              <img src="images/us.png" alt="" class="card-img-top">
+              <img src="{{asset('FrontEnd/images/us.png')}}" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title"><b>United States</b></h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
@@ -137,7 +137,7 @@
 
           <div class="col-lg-4 mb-4">
           <div class="card">
-              <img src="images/uk.png" alt="" class="card-img-top">
+              <img src="{{asset('FrontEnd/images/uk.png')}}" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title"><b>United Kingdom</b></h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
@@ -149,7 +149,7 @@
 
             <div class="col-lg-4 mb-4">
             <div class="card">
-              <img src="images/fr.png" alt="" class="card-img-top">
+              <img src="{{asset('FrontEnd/images/uk.png')}}" alt="" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title"><b>France</b></h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>

@@ -14,9 +14,9 @@ include "db.php";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <!-- data table css -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!-- css files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
     <title>Feedback</title>
   </head>
@@ -99,27 +99,27 @@ include "db.php";
       </div>
 
       <?php
-            if(isset($_POST['submit'])) 
+            if(isset($_POST['submit']))
             {
                 $name           = $_POST['name'];
                 $email          = $_POST['email'];
                 $service        = $_POST['service'];
                 $feedback       = $_POST['feedback'];
-               
-                
-                
-               
-               
-               $query = "INSERT INTO feedbackwrite(name, email, service, feedback) VALUES('$name', '$email', '$service', '$feedback')"; 
+
+
+
+
+
+               $query = "INSERT INTO feedbackwrite(name, email, service, feedback) VALUES('$name', '$email', '$service', '$feedback')";
 
                $feedbackconfirm = mysqli_query($connect, $query);
 
                 if ($feedbackconfirm)
                 {
                     header("Location: index.php");
-                    
+
                 }
-            } 
+            }
 
         ?>
 
@@ -129,7 +129,7 @@ include "db.php";
       <!-- footer start -->
       <footer class="bg-dark text-center text-white" id="footer">
         <!-- Grid container -->
-    
+
         <div class="container pt-4 pb-2">
           <div class="col-auto">
             <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
@@ -163,8 +163,9 @@ include "db.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <?php 
+    <?php
     ob_end_flush();
      ?>
   </body>
 </html>
+
