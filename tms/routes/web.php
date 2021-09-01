@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\Backend\Branch;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Frontend Web Routes
+| Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -13,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::get('/', 'App\Http\Controllers\BackEnd\homeController@index')->name('homepage');
 
@@ -47,7 +51,7 @@ Route::get('/search', 'App\Http\Controllers\BackEnd\TaskController@search')->nam
 
 //this routes are for branch management
 Route::group(['prefix' => 'admin'], function(){
-    Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard') ->name('admin.dashboard');
+    Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard')->middleware(['auth'])->name('admin.dashboard');
     Route::group(['prefix' => '/branch'], function(){
         Route::get('/manage','App\Http\Controllers\Backend\BranchController@index')->name('branch.manage');
         Route::get('/create','App\Http\Controllers\Backend\BranchController@create')->name('branch.create');
@@ -57,8 +61,12 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\BranchController@destroy')->name('branch.destroy');
     });
 
-});
+}); 
 
 
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
+require __DIR__.'/auth.php';

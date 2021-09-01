@@ -58,7 +58,7 @@ include "db.php";
                 <a class="nav-link" href="trackOrder.php">Track Your Order</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="admin/index.php">Admin</a>
+                <a class="nav-link" href="{{route('admin.dashboard')}}">Admin</a>
               </li>
             </ul>
           </div>
