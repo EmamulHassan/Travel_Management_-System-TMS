@@ -84,33 +84,6 @@
     </div>
 
 
-    <div>
-<table class="table">
-  <tr>
-    <th>id</th>
-    <th>name</th>
-    <th>phone</th>
-    <th>email</th>
-    <th>date</th>
-    <th>time</th>
-    <th>price</th>
-  </tr>
-
-  @foreach ($tasks as $task)
-  <tr>
-    <td>{{ $task->id}}</td>
-    <td>{{ $task->name}}</td>
-    <td>{{ $task->phone}}</td>
-    <td>{{ $task->email}}</td>
-    <td>{{ $task->dateorder}}</td>
-    <td>{{ $task->checkinTime}}</td>
-    <td>{{ $task->price}}</td>
-  </tr>
-  @endforeach
-</table>
-</div>
-
-
 
       <!-- footer start -->
       <footer class="bg-dark text-center text-white" id="footer" style="position: fixed; width: 100%; bottom: 0">
