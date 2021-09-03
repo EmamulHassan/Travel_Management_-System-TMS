@@ -3,3 +3,4 @@
     -   [Installation](/{{route}}/{{version}}/installation)
     -   [Admin Template](/{{route}}/{{version}}/admin_template)
     -   [Branches](/{{route}}/{{version}}/Branches)
+    -   [order](/{{route}}/{{version}}/order)
