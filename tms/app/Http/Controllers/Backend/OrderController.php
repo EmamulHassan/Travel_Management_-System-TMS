@@ -60,7 +60,13 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = TaskModel::find($id);
+        if(!is_null($order)){
+            return view('backend.pages.orders.edit',compact('order'));
+        }
+        else{
+            return route('order.manage');
+        }
     }
 
     /**
@@ -72,7 +78,19 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = TaskModel::find($id);
+        $task->name = $request->name;
+        $task->phone = $request->phone;
+        $task->email = $request->email;
+        $task->dateorder = $request->dateorder;
+        $task->checkinTime = $request->checkinTime;
+        $task->price = $request->price;
+        $task->payment_status = $request->payment_status;
+        $task->Trip_status = $request->Trip_status;
+        // dd($task);
+        // exit();
+        $task->save();
+        return redirect()->route('order.manage');
     }
 
     /**
