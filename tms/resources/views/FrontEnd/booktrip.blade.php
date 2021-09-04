@@ -111,9 +111,9 @@
           <label for="trip"><b>Please Select the Trip Location: </b></label>
             <select id="room" name="trip">
               <option value="selecttrip">Select Trip Location</option>
-              <option value="Single Room - 6000BDT">United States - 60000/-</option>
-              <option value="Deluxe Room - 8000BDT">United Kingdom - 70000/-</option>
-              <option value="Double Room - 10000BDT">France - 80000/-</option>
+              <option value="United States - 60000BDT">United States - 60000/-</option>
+              <option value="United Kingdom - 70000BDT">United Kingdom - 70000/-</option>
+              <option value="France - 80000BDT">France - 80000/-</option>
             </select><br><br>
 
 

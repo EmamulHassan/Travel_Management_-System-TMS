@@ -1,8 +1,3 @@
-<?php
-ob_start();
-include "db.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,8 +22,8 @@ include "db.php";
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="index.php">
-                <img src="images/logo.png" style="min-width: 50px; height: 30px" alt="logo">
+          <a class="logo" href="{{route('homepage')}}">
+                <img src="{{asset('FrontEnd/images/logo .png')}}" style="min-width: 0px; height: 40px" alt="logo">
               </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +31,7 @@ include "db.php";
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Home
+                <a class="nav-link" href="{{route('homepage')}}">Home
                       <span class="sr-only">(current)</span>
                     </a>
               </li>
@@ -44,16 +39,16 @@ include "db.php";
                 <a class="nav-link" href="#services">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="booktrip.php">Book a Travel</a>
+                <a class="nav-link" href="{{route('booktrip')}}">Book a Travel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact us</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="feedbackwrite.php">Feedback</a>
+                <a class="nav-link" href="{{route('feedback')}}">Feedback</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="trackOrder.php">Track Your Order</a>
+                <a class="nav-link" href="{{route('trackOrder')}}">Track Your Order</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.dashboard')}}">Admin</a>
@@ -73,18 +68,19 @@ include "db.php";
 
     <div class="container feedback-container">
       <div class="row" style="padding-bottom: 20px">
-        <form action="" method="post">
+        <form action="{{ route('feedback.store') }}" method="POST">
+          @csrf
             <label for="name">Name: </label>
-            <input type="text" id="name" name="name" placeholder="Your name.." required/>
+            <input type="text" id="name" class="form-control" name="name" placeholder="Your name.." required/>
 
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Your email.."/>
+            <input type="text" id="email" class="form-control" name="email" placeholder="Your email.."/>
 
             <label for="orderID">Order ID</label>
-            <input type="text" id="orderID" name="orderID" placeholder="Your Order ID.."/>
+            <input type="text" id="orderID" class="form-control" name="orderID" placeholder="Your Order ID.."/>
 
             <label for="service">Please Select Service: </label>
-            <select id="service" name="service" required>
+            <select id="service" name="service" class="form-control" required>
               <option value="">Select Travel Location</option>
               <option value="United States">United States</option>
               <option value="United Kingdom">United Kingdom</option>
@@ -92,37 +88,11 @@ include "db.php";
             </select><br><br>
 
             <label for="Feedback">Write Feedback</label>
-            <textarea id="Feedback" name="feedback" required placeholder="Write something.." style="height: 400px"></textarea>
+            <textarea id="Feedback" name="feedback" class="form-control" required placeholder="Write something.." style="height: 400px"></textarea>
 
-            <button class="btn btn-success" id="submit" name="submit">Submit</button>
+            <button type="submit" class="btn btn-success" id="submit" name="submit">Submit</button>
         </form>
       </div>
-
-      <?php
-            if(isset($_POST['submit']))
-            {
-                $name           = $_POST['name'];
-                $email          = $_POST['email'];
-                $service        = $_POST['service'];
-                $feedback       = $_POST['feedback'];
-
-
-
-
-
-               $query = "INSERT INTO feedbackwrite(name, email, service, feedback) VALUES('$name', '$email', '$service', '$feedback')";
-
-               $feedbackconfirm = mysqli_query($connect, $query);
-
-                if ($feedbackconfirm)
-                {
-                    header("Location: index.php");
-
-                }
-            }
-
-        ?>
-
     </div>
 
 
@@ -163,9 +133,6 @@ include "db.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <?php
-    ob_end_flush();
-     ?>
   </body>
 </html>
 

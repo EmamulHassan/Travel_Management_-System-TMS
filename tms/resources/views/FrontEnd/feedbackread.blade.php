@@ -1,8 +1,3 @@
-<?php
-ob_start();
-include "db.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -74,54 +69,16 @@ include "db.php";
       <div class="row" style="padding-bottom: 20px">
 
         <table>
-              <tr>
-                <th>No.</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Service</th>
-                <th>Feedback</th>
-              </tr>
-        
-      
-
-     <!-- <?php 
-                    //read query (read sql command) to read all data from users table
-                    $query = "SELECT * FROM feedbackwrite";
-
-                    // Pass the SQL Command to the Database
-                    $feedbackread = mysqli_query($connect, $query);
-
-                    // variable for sl no.
-                    $i = 1;
-
-                    // Receive all the Data From Users Table using a Loop
-                    while ($row = mysqli_fetch_assoc($feedbackread)) {
-                        
-                        $id             = $row['id'];
-                        $name           = $row['name'];
-                        $email          = $row['email']; 
-                        $service        = $row['service'];
-                        $feedback       = $row['feedback'];
-
-
-                        ?>
-                        <tr>
-                          <th scope="row"><?php echo $i; ?></th> 
-                          <td><?php echo $name; ?></td>
-                          <td><?php echo $email; ?></td>
-                          <td><?php echo $service; ?></td>
-                          <td><?php echo $feedback; ?></td>
-                        </tr><br>
-
-                    <?php
-                    $i++;
-                    }
-
-                    ?> -->
-            </table>
-            </div>
-          
-      </div>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service</th>
+            <th>Feedback</th>
+          </tr>
+        </table>
+      </div>   
+    </div>
 
 
       <!-- footer start -->
@@ -160,9 +117,6 @@ include "db.php";
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <?php 
-    ob_end_flush();
-     ?>
+    
   </body>
 </html>
