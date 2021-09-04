@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> 
     <!-- css files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
     <title>Feedback</title>
   </head>
@@ -23,8 +23,8 @@
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="index.php">
-                <img src="images/logo.png" style="min-width: 50px; height: 30px" alt="logo">
+          <a class="logo" href="{{route('homepage')}}">
+                <img src="{{asset('FrontEnd/images/logo .png')}}" style="min-width: 50px; height: 30px" alt="logo">
               </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
                 <a class="nav-link" href="#footer">Contact us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="feedbackwrite.php">Feedback</a>
+                <a class="nav-link" href="{{route('feedback')}}">Feedback</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="{{route('trackOrder')}}">Track Your Order</a>
@@ -87,13 +87,15 @@
     <div>
 <table class="table">
   <tr>
-    <th>id</th>
-    <th>name</th>
-    <th>phone</th>
-    <th>email</th>
-    <th>date</th>
-    <th>time</th>
-    <th>price</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Price</th>
+    <th>Payment Status</th>
+    <th>Trip Status</th>
   </tr>
 
   @foreach ($tasks as $task)
@@ -105,6 +107,22 @@
     <td>{{ $task->dateorder}}</td>
     <td>{{ $task->checkinTime}}</td>
     <td>{{ $task->price}}</td>
+
+    <td>
+      @if ($task->payment_status==1)
+      <span class="badge badge-danger">Not Confirmed</span>
+      @elseif ($task->payment_status==2)
+      <span class="badge badge-success">Confirmed</span>
+      @endif
+    </td>
+    <td>
+      @if ($task->Trip_status==1)
+      <span class="badge badge-danger">Incomplete</span>
+      @elseif ($task->Trip_status==2)
+      <span class="badge badge-success">Completed</span>
+      @endif
+  </td>
+
   </tr>
   @endforeach
 </table>
@@ -132,7 +150,7 @@
 
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2021 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">BookFast.com</a>
+          <a class="text-white" href="BookFast.com">BookFast.com</a>
         </div>
 
       </footer>
