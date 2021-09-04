@@ -73,25 +73,25 @@
       <form action=" {{route('store')}} " method="POST"  >
         @csrf
 
-          <p style="margin-bottom: 10px;">Please Enter Booking Informations.</p>
+          <p style="margin-bottom: 10px;" >Please Enter Booking Informations.</p>
           <hr>
 
           <label id="textview" for="name"><b>Name: </b></label>
-          <input type="text" id="name" name="name" placeholder="Input Your Name..." ><br>
+          <input type="text" id="name" name="name" placeholder="Input Your Name..." Required ><br>
 
 
           <label for="phone"><b>Phone No: </b></label>
-          <input type="phone" id="phone" name="phone" placeholder="Enter Your Phone Number..."><br>
+          <input type="phone" id="phone" name="phone" placeholder="Enter Your Phone Number..." Required><br>
 
 
           <label for="email"><b>Email(Optional): </b></label>
-          <input type="email" id="email" name="email" placeholder="Enter Your Email..."><br><br>
+          <input type="email" id="email" name="email" placeholder="Enter Your Email..." Required><br><br>
 
 
           <label for="dateofOrder"><b>Select Date: </b></label>
-          <input type="date" id="dateorder" name="dateorder"><br><br>
+          <input type="date" id="dateorder" name="dateorder" ><br><br>
 
-          <label for="checkinTime"><b>Preferred Flight Time: </b></label>
+          <label for="checkinTime" ><b>Preferred Flight Time: </b></label>
             <select id="checkinTime" name="checkinTime">
               <option value="selectcheckinTime">Select a Time</option>
               <option value="02.00am">02.00am</option>
@@ -167,5 +167,11 @@
       </footer>
     <!-- footer end -->
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
   </body>
+
 </html>
