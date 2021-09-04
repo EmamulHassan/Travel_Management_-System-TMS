@@ -92,7 +92,7 @@
         <div class="container pt-4 pb-2">
           <div class="col-auto">
             <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
-            <a href="feedbackread.php"><button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button></a>
+            <a href="{{route('feedbackread')}}"><button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button></a>
           </div>
         </div>
 

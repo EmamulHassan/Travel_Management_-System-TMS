@@ -90,7 +90,7 @@
             <label for="Feedback">Write Feedback</label>
             <textarea id="Feedback" name="feedback" class="form-control" required placeholder="Write something.." style="height: 400px"></textarea>
 
-            <button type="submit" class="btn btn-success" id="submit" name="submit">Submit</button>
+            <button type="submit" class="btn btn-primary" id="submit" name="submit">Submit</button>
         </form>
       </div>
     </div>
@@ -103,7 +103,7 @@
         <div class="container pt-4 pb-2">
           <div class="col-auto">
             <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
-            <a href="feedbackread.php"><button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button></a>
+            <a href="{{route('feedbackread')}}"><button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button></a>
           </div>
         </div>
 
