@@ -21,6 +21,8 @@ class CreateTaskModelsTable extends Migration
             $table->string('dateorder');
             $table->string('checkinTime');
             $table->string('price');
+            $table->string('payment_status')->default(1)->comment('1 =Not  Confirmed, 2 = Confirmed')->nullable();
+            $table->string('Trip_status')->default(1)->comment('1 = Incomplete, 2 = Completed ')->nullable();
             $table->timestamps();
         });
     }
