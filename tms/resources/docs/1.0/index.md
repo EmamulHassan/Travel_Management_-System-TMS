@@ -4,3 +4,4 @@
     -   [Admin Template](/{{route}}/{{version}}/admin_template)
     -   [Branches](/{{route}}/{{version}}/Branches)
     -   [order](/{{route}}/{{version}}/order)
+    -   [Manage Order](/{{route}}/{{version}}/order_manage)
