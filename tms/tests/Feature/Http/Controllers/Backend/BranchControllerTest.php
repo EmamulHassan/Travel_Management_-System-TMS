@@ -2,21 +2,21 @@
 
 namespace Tests\Feature\Http\Controllers\Backend;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+
 
 class BranchControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    use RefreshDatabase;
+    /** @test */
+    public function see_all_branch()
     {
-        $response = $this->get('/');
-
+        $User = User::factory()->create();
+        $this->actingAs($User);
+        $response = $this->get('/admin/orders/manage');
         $response->assertStatus(200);
     }
+
 }
