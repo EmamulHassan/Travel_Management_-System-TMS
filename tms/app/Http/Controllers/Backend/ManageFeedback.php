@@ -82,6 +82,13 @@ class ManageFeedback extends Controller
      */
     public function destroy($id)
     {
-        //
+        $feedback = Feedback::find($id);
+        if(!is_null($feedback)){
+            $feedback->delete();
+            return redirect()->route('feedback_manage.manage');
+        }
+        else{
+             return redirect()->route('feedback_manage.manage');
+        }
     }
 }
