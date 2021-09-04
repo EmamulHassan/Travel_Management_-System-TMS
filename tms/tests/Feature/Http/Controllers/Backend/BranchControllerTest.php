@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Http\Controllers\Backend;
 
+use App\Models\Backend\Branch;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -31,7 +32,8 @@ class BranchControllerTest extends TestCase
         'phone' =>'01712345678',
         'status' =>'1',
         ]);
-        $response->assertStatus(200);
+        $this->assertCount(1, Branch::all());
+
     }
     public function branch_can_be_updated_through_form()
     {
@@ -46,7 +48,8 @@ class BranchControllerTest extends TestCase
         'phone' =>'01712345678',
         'status' =>'2',
         ]);
-        $response->assertStatus(200);
+        $this->assertCount(1, Branch::all());
+
     }
 
 
