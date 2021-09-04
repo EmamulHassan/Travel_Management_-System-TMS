@@ -5,3 +5,4 @@
     -   [Branches](/{{route}}/{{version}}/Branches)
     -   [order](/{{route}}/{{version}}/order)
     -   [Manage Order](/{{route}}/{{version}}/order_manage)
+    -   [Manage Feedback](/{{route}}/{{version}}/manage_feedback)
