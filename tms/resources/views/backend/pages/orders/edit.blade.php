@@ -76,7 +76,7 @@
                                         <input readonly type="text" name="checkinTime" class="form-control" required="required" autocomplete="off" value="{{$order->checkinTime}}" >
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" name="addBranch" value="Edit Branch" style="margin-top: 25px;" class="btn btn-teal  mg-b-10">
+                                        <input type="submit" name="addBranch" value="Update Order" style="margin-top: 25px;" class="btn btn-teal  mg-b-10">
                                     </div>
 
                                 </div>

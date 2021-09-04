@@ -142,7 +142,7 @@
                 <h5 class="card-title"><b>United Kingdom</b></h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
                 <p class="card-text"><b>Starts from: </b> 70000BDT/ Person</p>
-               <a href="unitedKingdom.php" class="btn btn-outline-success btn-sm">See Details!</a>
+               <a href="{{route('place.us')}}" class="btn btn-outline-success btn-sm">See Details!</a>
               </div>
               </div>
             </div>
@@ -154,7 +154,7 @@
                 <h5 class="card-title"><b>France</b></h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
                 <p class="card-text"><b>Starts from: </b> 80000BDT/ Person</p>
-               <a href="france.php" class="btn btn-outline-success btn-sm">See Details!</a>
+               <a href="{{route('place.us')}}" class="btn btn-outline-success btn-sm">See Details!</a>
               </div>
              </div>
             </div>
