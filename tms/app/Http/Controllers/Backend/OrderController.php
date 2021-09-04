@@ -101,6 +101,13 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = TaskModel::find($id);
+        if(!is_null($order)){
+            $order->delete();
+            return redirect()->route('order.manage');
+        }
+        else{
+             return redirect()->route('order.manage');
+        }
     }
 }
