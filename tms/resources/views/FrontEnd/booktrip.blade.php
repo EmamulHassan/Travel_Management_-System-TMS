@@ -48,7 +48,7 @@
                 <a class="nav-link" href="#footer">Contact us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="feedbackwrite.php">Feedback</a>
+                <a class="nav-link" href="{{route('feedback')}}">Feedback</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('trackOrder')}}">Track Your Order</a>
@@ -161,7 +161,7 @@
 
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2021 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">BookFast.com</a>
+          <a class="text-white" href="BookFast.com/">BookFast.com</a>
         </div>
 
       </footer>

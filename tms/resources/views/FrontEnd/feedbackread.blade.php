@@ -22,8 +22,8 @@
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="index.php">
-                <img src="images/logo.png" style="min-width: 50px; height: 30px" alt="logo">
+          <a class="logo" href="{{route('homepage')}}">
+                <img src="{{asset('FrontEnd/images/logo .png')}}" style="min-width: 50px; height: 30px" alt="logo">
               </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                 <a class="nav-link" href="#footer">Contact us</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="feedbackwrite.php">Feedback</a>
+                <a class="nav-link" href="{{route('feedback')}}">Feedback</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="trackOrder.php">Track Your Order</a>
@@ -88,7 +88,7 @@
         <div class="container pt-4 pb-2">
           <div class="col-auto">
             <p class="pt-2"><b>Please Write a Review if you Enjoyed Our Service.</b></p>
-            <a href="feedbackwrite.php"><button type="submit" class="btn btn-outline-light mb-4"> Give Feedback </button></a>
+            <a href="{{route('feedback')}}"><button type="submit" class="btn btn-outline-light mb-4"> Give Feedback </button></a>
           </div>
         </div>
 
@@ -101,7 +101,7 @@
 
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2021 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">BookFast.com</a>
+          <a class="text-white" href="BookFast.com">BookFast.com</a>
         </div>
 
       </footer>

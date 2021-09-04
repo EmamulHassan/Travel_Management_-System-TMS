@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!-- css files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
     <title>Feedback</title>
   </head>
@@ -46,7 +46,7 @@
                 <a class="nav-link" href="#footer">Contact us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="feedbackwrite.php">Feedback</a>
+                <a class="nav-link" href="{{route('feedback')}}">Feedback</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="{{route('trackOrder')}}">Track Your Order</a>
@@ -105,7 +105,7 @@
 
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2021 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">BookFast.com</a>
+          <a class="text-white" href="BookFast.com">BookFast.com</a>
         </div>
 
       </footer>
