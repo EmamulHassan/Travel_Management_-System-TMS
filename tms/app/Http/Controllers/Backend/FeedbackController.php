@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Feedback;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -14,7 +15,8 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        // $feedbacks = Feedback::orderBy('id', 'desc')->get();
+        return view('FrontEnd.feedbackwrite');
     }
 
     /**
@@ -35,7 +37,19 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $feedback = new Feedback();
+
+        $feedback->name            = $request->name;
+        $feedback->email           = $request->email;
+        $feedback->orderid         = $request->orderID;
+        $feedback->service         = $request->service;
+        $feedback->feedback        = $request->feedback;
+
+
+        // dd($feedback);
+        // exit();
+        $feedback->save();
+        return redirect()->route('homepage');
     }
 
     /**
