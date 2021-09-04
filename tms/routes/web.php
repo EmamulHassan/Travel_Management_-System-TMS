@@ -60,8 +60,15 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/update/{id}','App\Http\Controllers\Backend\BranchController@update')->name('branch.update');
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\BranchController@destroy')->name('branch.destroy');
     });
+    Route::group(['prefix' => '/orders'], function(){
+        Route::get('/manage','App\Http\Controllers\Backend\OrderController@index')->name('order.manage');
+        Route::post('/store','App\Http\Controllers\Backend\OrderController@store')->name('order.store');
+        Route::get('/edit/{id}','App\Http\Controllers\Backend\OrderController@edit')->name('order.edit');
+        Route::post('/update/{id}','App\Http\Controllers\Backend\OrderController@update')->name('order.update');
+        Route::post('/destroy/{id}','App\Http\Controllers\Backend\OrderController@destroy')->name('order.destroy');
+    });
 
-}); 
+});
 
 
 
