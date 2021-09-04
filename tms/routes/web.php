@@ -44,7 +44,7 @@ Route::group(['prefix' => '/feedback'], function(){
     
 Route::get('/feedbacks','App\Http\Controllers\Backend\FeedbackreadController@index')->name('feedbackread');
 
-// Route::get('/us','App\Http\Controllers\Backend\USController@index')->name('place.us');
+Route::get('/us','App\Http\Controllers\Backend\USController@index')->name('place.us');
 
 
 /*
