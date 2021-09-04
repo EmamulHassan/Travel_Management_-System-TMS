@@ -29,7 +29,7 @@
             <span class="menu-item-label">Orders</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{route('branch.manage')}}" class="sub-link">Manage All Orders</a></li>
+            <li class="sub-item"><a href="{{route('order.manage')}}" class="sub-link">Manage All Orders</a></li>
           </ul>
         </li>
         {{-- <li class="br-menu-item">
