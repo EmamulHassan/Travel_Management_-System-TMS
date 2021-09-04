@@ -20,7 +20,16 @@
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{route('branch.manage')}}" class="sub-link">Manage All Branch</a></li>
             <li class="sub-item"><a href="{{route('branch.create')}}" class="sub-link">Create New Branch</a></li>
+          </ul>
+        </li>
 
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <span class="menu-item-label">Orders</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{route('branch.manage')}}" class="sub-link">Manage All Orders</a></li>
           </ul>
         </li>
         {{-- <li class="br-menu-item">
