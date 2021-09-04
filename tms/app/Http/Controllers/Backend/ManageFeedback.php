@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Backend\Feedback;
 
 class ManageFeedback extends Controller
 {
@@ -14,7 +15,8 @@ class ManageFeedback extends Controller
      */
     public function index()
     {
-        //
+         $feedbacks = Feedback::orderBy('id', 'desc')->get();
+        return view('backend.pages.feedback.manage',compact('feedbacks'));
     }
 
     /**
