@@ -48,16 +48,16 @@
                                     <td>{{$order->price}}</td>
                                     <td>
                                         @if ($order->payment_status==1)
-                                        <span class="badge badge-success">Not  Confirmed</span>
+                                        <span class="badge badge-danger">Not Confirmed</span>
                                         @elseif ($order->payment_status==2)
-                                        <span class="badge badge-danger">Confirmed</span>
+                                        <span class="badge badge-success">Confirmed</span>
                                         @endif
                                     </td>
                                     <td>
                                         @if ($order->Trip_status==1)
-                                        <span class="badge badge-success">Incomplete</span>
+                                        <span class="badge badge-danger">Incomplete</span>
                                         @elseif ($order->Trip_status==2)
-                                        <span class="badge badge-danger">Completed</span>
+                                        <span class="badge badge-success">Completed</span>
                                         @endif
                                     </td>
                                     <td>
