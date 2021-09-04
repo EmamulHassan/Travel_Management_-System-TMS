@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::get('/', 'App\Http\Controllers\BackEnd\homeController@index')->name('homepage');
@@ -34,7 +31,16 @@ Route::post('/store', 'App\Http\Controllers\BackEnd\TaskController@store')->name
 Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\TaskController@trackOrder')->name('trackOrder');
 Route::get('/search', 'App\Http\Controllers\BackEnd\TaskController@search')->name('search');
 
+// Route::get('/feedback', 'App\Http\Controllers\BackEnd\FeedbackController@index')->name('feedback');
+// Route::post('/feedbackstore', 'App\Http\Controllers\BackEnd\FeedbackController@store')->name('feedstore');
 
+Route::group(['prefix' => '/feedback'], function(){
+        Route::get('/manage','App\Http\Controllers\Backend\FeedbackController@index')->name('feedback');
+        Route::post('/store','App\Http\Controllers\Backend\FeedbackController@store')->name('feedback.store');
+        Route::get('/edit/{id}','App\Http\Controllers\Backend\FeedbackController@edit')->name('feedback.edit');
+        Route::post('/update/{id}','App\Http\Controllers\Backend\FeedbackController@update')->name('feedback.update');
+        Route::post('/destroy/{id}','App\Http\Controllers\Backend\FeedbackController@destroy')->name('feedback.destroy');
+    });
 /*
 |--------------------------------------------------------------------------
 | Backend Admin Panel Web Routes
