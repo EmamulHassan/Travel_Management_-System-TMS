@@ -77,18 +77,20 @@ include "db.php";
       <h2 style="padding-bottom: 20px">Order Details: </h2>
 
       <!-- table starts -->
-            <table>
-              <tr>
-                <!-- <th>No.</th> -->
-                <th>OrderID</th>
-                <th>Name</th>
-                <th>Phone Number</th>
-                <th>Email</th>
-                <th>Date of Order</th>
-                <th>Preferred Time</th>
-                <th>Trip Location</th>
-                <th>Price(BDT)</th>
-              </tr>
+            <table class="table table-bordered table-striped table-hover table-custom">
+              <thead class="thead-dark">
+                <tr>
+                  <!-- <th>No.</th> -->
+                  <th>OrderID</th>
+                  <th>Name</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>Date of Order</th>
+                  <th>Preferred Time</th>
+                  <th>Trip Location</th>
+                  <th>Price(BDT)</th>
+                </tr>
+              </thead>
               
               
 

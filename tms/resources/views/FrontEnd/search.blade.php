@@ -85,18 +85,20 @@
 
 
     <div>
-<table class="table">
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Price</th>
-    <th>Payment Status</th>
-    <th>Trip Status</th>
-  </tr>
+<table class="table table-bordered table-striped table-hover table-custom">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Price</th>
+      <th>Payment Status</th>
+      <th>Trip Status</th>
+    </tr>
+  </thead>
 
   @foreach ($tasks as $task)
   <tr>
@@ -137,7 +139,7 @@
         <div class="container pt-4 pb-2">
           <div class="col-auto">
             <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
-            <a href="feedbackread.php"><button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button></a>
+            <a href="{{route('feedbackread')}}"><button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button></a>
           </div>
         </div>
 

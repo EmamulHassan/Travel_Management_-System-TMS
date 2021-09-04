@@ -41,6 +41,12 @@ Route::group(['prefix' => '/feedback'], function(){
         Route::post('/update/{id}','App\Http\Controllers\Backend\FeedbackController@update')->name('feedback.update');
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\FeedbackController@destroy')->name('feedback.destroy');
     });
+    
+Route::get('/feedbacks','App\Http\Controllers\Backend\FeedbackreadController@index')->name('feedbackread');
+
+// Route::get('/us','App\Http\Controllers\Backend\USController@index')->name('place.us');
+
+
 /*
 |--------------------------------------------------------------------------
 | Backend Admin Panel Web Routes
@@ -73,6 +79,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/update/{id}','App\Http\Controllers\Backend\OrderController@update')->name('order.update');
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\OrderController@destroy')->name('order.destroy');
     });
+
     Route::group(['prefix' => '/feedback_manage'], function(){
         Route::get('/manage','App\Http\Controllers\Backend\ManageFeedback@index')->name('feedback_manage.manage');
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\ManageFeedback@destroy')->name('feedback_manage.destroy');

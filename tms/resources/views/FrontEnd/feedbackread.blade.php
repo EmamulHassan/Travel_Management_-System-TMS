@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> 
     <!-- css files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
     <title>Feedbacks</title>
   </head>
@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Home
+                <a class="nav-link" href="{{route('homepage')}}">Home
                       <span class="sr-only">(current)</span>
                     </a>
               </li>
@@ -39,7 +39,7 @@
                 <a class="nav-link" href="index.php#services">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="booktrip.php">Book a Travel</a>
+                <a class="nav-link" href="{{route('booktrip')}}">Book a Travel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact us</a>
@@ -68,15 +68,35 @@
     <div class="container feedback-container">
       <div class="row" style="padding-bottom: 20px">
 
-        <table>
-          <tr>
-            <th>No.</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Service</th>
-            <th>Feedback</th>
-          </tr>
-        </table>
+        <table class="table table-bordered table-striped table-hover table-custom">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">SL</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Order Id</th>
+                                    <th scope="col">Service</th>
+                                    <th scope="col">Feedback</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php $i = 0; @endphp @foreach($feedbacks as $feedback) @php $i++; @endphp
+
+                                <tr>
+                                    <th scope="row">{{$i;}}</th>
+                                    <td>{{$feedback->name}}</td>
+                                    <td>{{$feedback->email}}</td>
+                                    <td>{{$feedback->orderid}}</td>
+                                    <td>{{$feedback->service}}</td>
+                                    <td>{{$feedback->feedback}}</td>
+                                </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table>
+
+
+
       </div>   
     </div>
 
