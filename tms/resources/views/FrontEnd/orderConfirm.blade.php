@@ -1,7 +1,3 @@
-<?php
-ob_start();
-include "db.php";
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +10,11 @@ include "db.php";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <!-- data table css -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!-- css files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
-
-    <title>Order Confirm</title>
+    <title>Order Info</title>
   </head>
   <body>
 
@@ -28,11 +23,10 @@ include "db.php";
       <!-- navbar start -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="navbar">
         <div class="container">
-          <a class="logo" href="index.php">
-                <img src="images/logo.png" style="min-width: 50px; height: 30px" alt="logo">
+          <a class="logo" href="{{route('homepage')}}">
+                <img src="{{asset('FrontEnd/images/logo .png')}}" style="min-width: 50px; height: 30px" alt="logo">
               </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse"
-           data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -45,17 +39,17 @@ include "db.php";
               <li class="nav-item">
                 <a class="nav-link" href="#services">Services</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link disabled" href="#cardholder">Book a Travel</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('booktrip')}}">Book a Travel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="feedbackwrite.php">Feedback</a>
+                <a class="nav-link" href="{{route('feedback')}}">Feedback</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="trackOrder.php">Track Your Order</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{route('trackOrder')}}">Track Your Order</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.dashboard')}}">Admin</a>
@@ -68,70 +62,75 @@ include "db.php";
 
     </header>
 
-      <!-- Order Confirm infomation start -->
-      <div class="container" style="padding: 20px">
-
-      <h2>Your Order has Been Confirmed. Send the Following Amount to the Number below via BKash.</h2><br>
-      <h2><img src="images/bkash.png" alt="bkash">Bkash No: <u>01987654321</u></h2><br>
-
-      <h2 style="padding-bottom: 20px">Order Details: </h2>
-
-      <!-- table starts -->
-            <table class="table table-bordered table-striped table-hover table-custom">
-              <thead class="thead-dark">
-                <tr>
-                  <!-- <th>No.</th> -->
-                  <th>OrderID</th>
-                  <th>Name</th>
-                  <th>Phone Number</th>
-                  <th>Email</th>
-                  <th>Date of Order</th>
-                  <th>Preferred Time</th>
-                  <th>Trip Location</th>
-                  <th>Price(BDT)</th>
-                </tr>
-              </thead>
-              
-              
-
-            </table>
-            <!-- table ends -->
-
-      <form name="otpconfirm" method="POST"  style="padding-top: 20px"> 
 
 
-        <label for="otp"><b>Enter TrxID: </b></label>
-              <input type="int" id="otp" name="otp" placeholder="Enter the transaction id..."><br>
 
-      </form>
-    
-          <button type="submit" name="submit" onclick="validateFormotp()">Submit</button>
-
-    </div>
+    <!-- feedback form start -->
 
 
-    
-      <!-- Order Confirm infomation end -->
+
+    <h1 style="text-align : center; margin : 50px 0px">Order Info</h1>
+
+
+<table class="table table-bordered table-striped table-hover table-custom">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Price</th>
+      <th>Payment Status</th>
+      <th>Trip Status</th>
+    </tr>
+  </thead>
+
+  @foreach ($tasks as $task)
+  <tr>
+    <td>{{ $task->id}}</td>
+    <td>{{ $task->name}}</td>
+    <td>{{ $task->phone}}</td>
+    <td>{{ $task->email}}</td>
+    <td>{{ $task->dateorder}}</td>
+    <td>{{ $task->checkinTime}}</td>
+    <td>{{ $task->price}}</td>
+
+    <td>
+      @if ($task->payment_status==1)
+      <span class="badge badge-danger">Not Confirmed</span>
+      @elseif ($task->payment_status==2)
+      <span class="badge badge-success">Confirmed</span>
+      @endif
+    </td>
+    <td>
+      @if ($task->Trip_status==1)
+      <span class="badge badge-danger">Incomplete</span>
+      @elseif ($task->Trip_status==2)
+      <span class="badge badge-success">Completed</span>
+      @endif
+  </td>
+
+  </tr>
+  @endforeach
+</table>
+</div>
+
 
 
       <!-- footer start -->
       <footer class="bg-dark text-center text-white" id="footer" style="position: fixed; width: 100%; bottom: 0">
         <!-- Grid container -->
-        <!-- <div class="container pt-4 pb-2">
+
+        <div class="container pt-4 pb-2">
           <div class="col-auto">
-            <p class="pt-2"><b>Please Write a Review if you Enjoyed Our Service.</b></p>
-            <a href="feedbackwrite.php"><button type="submit" class="btn btn-outline-light mb-4"> Give Feedback </button></a>
+            <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
+            <a href="{{route('feedbackread')}}"><button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button></a>
           </div>
         </div>
 
-        <div class="container pb-2">
-          <div class="col-auto">
-            <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
-            <button type="submit" class="btn btn-outline-light mb-4"> Check Feedbacks </button>
-          </div>
-        </div> -->
-
-        <section class="mb-4 pt-4">
+        <section class="mb-4">
             <h3>Contact Info.</h3><hr>
             <p>Location: Bashundhara Dhaka</p>
             <p>Email: <a href="mailto:bookfast@gmail.com" style="text-decoration: none; color: white"><u>bookfast@gmail.com</u></a></p>
@@ -140,7 +139,7 @@ include "db.php";
 
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2021 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">BookFast.com</a>
+          <a class="text-white" href="BookFast.com">BookFast.com</a>
         </div>
 
       </footer>
@@ -157,9 +156,5 @@ include "db.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="js/mainotp.js"></script>  
-<?php 
-ob_end_flush();
- ?>
   </body>
 </html>
