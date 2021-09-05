@@ -20,7 +20,20 @@ class BooktripTest extends TestCase
      }
 
 
+    public function tripInfo_can_be_added_through_form()
+    {
+        $this->withoutExceptionHandling();
+        $response = $this->post('/booktrip/store',[
 
+        'name' => 'Emam',
+        'phone' => '1987656',
+        'email' => 'emam@gmail.com',
+        'dateorder' => '2021-1-1',
+        'checkinTime' =>'2:00 am',
+        'price' =>'60000',
+        ]);
+        $this ->assertCount(1,TaskModel::all());
+    }
 
 
 }
