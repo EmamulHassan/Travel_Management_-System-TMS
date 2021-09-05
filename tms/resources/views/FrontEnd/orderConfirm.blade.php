@@ -72,6 +72,7 @@
     <h1 style="text-align : center; margin : 50px 0px">Order Info</h1>
 
 
+
 <table class="table table-bordered table-striped table-hover table-custom">
   <thead class="thead-dark">
     <tr>
@@ -115,6 +116,11 @@
   </tr>
   @endforeach
 </table>
+
+<div class="alert alert-success" role="alert">
+  Your Order Has Been Placed. Please Take a Screenshot of Your OrderID to Track Your Order from Track Order Page.
+</div>
+
 </div>
 
 
