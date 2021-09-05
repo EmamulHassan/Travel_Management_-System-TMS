@@ -10,5 +10,5 @@
     -   [Write Feedback](/{{route}}/{{version}}/write_feedback)
     -   [Read Feedback](/{{route}}/{{version}}/read_feedback)
     -   [Feedback Testing](/{{route}}/{{version}}/feedback_testing)
-    -   [Branch Controller Testing](/{{route}}/{{version}}/branch_testing)
+    -   [Branch Feature Testing](/{{route}}/{{version}}/branch_testing)
     -   [Booktrip Testing](/{{route}}/{{version}}/booktrip_testing)

@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <!-- data table css -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!-- css files -->
     <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
-    <title>Feedback</title>
+    <title>Track Order</title>
   </head>
   <body>
 
@@ -104,7 +104,7 @@
   <tr>
     <td>{{ $task->id}}</td>
     <td>{{ $task->name}}</td>
-    <td>{{ $task->phone}}</td> 
+    <td>{{ $task->phone}}</td>
     <td>{{ $task->email}}</td>
     <td>{{ $task->dateorder}}</td>
     <td>{{ $task->checkinTime}}</td>
@@ -135,7 +135,7 @@
       <!-- footer start -->
       <footer class="bg-dark text-center text-white" id="footer" style="position: fixed; width: 100%; bottom: 0">
         <!-- Grid container -->
-    
+
         <div class="container pt-4 pb-2">
           <div class="col-auto">
             <p class="pt-2"><b>Check Our Feedbacks from the Visitors around the World.</b></p>
