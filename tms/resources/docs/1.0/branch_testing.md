@@ -13,7 +13,7 @@ redirects the admin to manage page
 
 <h3>Function Name: branch_can_be_added_through_form()</h3>
 This testion was done to check 
-<h3>store(Request $request) function</h3> 
+<h3>store(Request $request) function of BranchController</h3> 
 To check this i had to enter dummy data in the respective fields of store function
 
 ## Title.
