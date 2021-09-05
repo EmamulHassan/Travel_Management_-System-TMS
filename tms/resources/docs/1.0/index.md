@@ -9,3 +9,4 @@
     -   [Manage Feedback](/{{route}}/{{version}}/manage_feedback)
     -   [Write Feedback](/{{route}}/{{version}}/write_feedback)
     -   [Read Feedback](/{{route}}/{{version}}/read_feedback)
+    -   [Feedback Testing](/{{route}}/{{version}}/feedback_testing)
