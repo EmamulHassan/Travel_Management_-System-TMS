@@ -45,10 +45,14 @@ class TaskController extends Controller
         $task->dateorder = $request->dateorder;
         $task->checkinTime = $request->checkinTime;
         $task->price = $request->trip;
-        
+
         $task->save();
-        return redirect()->route('trackOrder');
-    
+
+        $tasks = TaskModel::orderBy('id', 'desc')->paginate(1);
+        return view('FrontEnd.orderConfirm', compact('tasks'));
+
+        // return redirect()->route('orderinformation');
+
     }
 
     /**
@@ -59,7 +63,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -98,7 +102,7 @@ class TaskController extends Controller
         else
             {
                 return view('trackOrder');
-            }   
+            }
 
 
 
@@ -117,4 +121,6 @@ class TaskController extends Controller
     {
         //
     }
+
+
 }

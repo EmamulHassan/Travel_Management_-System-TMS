@@ -31,6 +31,7 @@ Route::post('/store', 'App\Http\Controllers\BackEnd\TaskController@store')->name
 Route::get('/trackOrder', 'App\Http\Controllers\BackEnd\TaskController@trackOrder')->name('trackOrder');
 Route::get('/search', 'App\Http\Controllers\BackEnd\TaskController@search')->name('search');
 
+
 // Route::get('/feedback', 'App\Http\Controllers\BackEnd\FeedbackController@index')->name('feedback');
 // Route::post('/feedbackstore', 'App\Http\Controllers\BackEnd\FeedbackController@store')->name('feedstore');
 
@@ -41,7 +42,7 @@ Route::group(['prefix' => '/feedback'], function(){
         Route::post('/update/{id}','App\Http\Controllers\Backend\FeedbackController@update')->name('feedback.update');
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\FeedbackController@destroy')->name('feedback.destroy');
     });
-    
+
 Route::get('/feedbacks','App\Http\Controllers\Backend\FeedbackreadController@index')->name('feedbackread');
 
 Route::get('/us','App\Http\Controllers\Backend\USController@index')->name('place.us');
