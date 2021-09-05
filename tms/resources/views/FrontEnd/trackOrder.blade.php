@@ -14,7 +14,7 @@
     <!-- css files -->
     <link rel="stylesheet" href="{{asset('FrontEnd/css/style.css')}}">
 
-    <title>Feedback</title>
+    <title>Track Order</title>
   </head>
   <body>
 
