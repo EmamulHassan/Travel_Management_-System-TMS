@@ -25,9 +25,9 @@ class BooktripTest extends TestCase
         $this->withoutExceptionHandling();
         $response = $this->post('/booktrip/store',[
 
-        'name' => 'Emam',
+        'name' => 'dip',
         'phone' => '1987656',
-        'email' => 'emam@gmail.com',
+        'email' => 'dip@gmail.com',
         'dateorder' => '2021-1-1',
         'checkinTime' =>'2:00 am',
         'price' =>'60000',
