@@ -4,15 +4,15 @@
 
 ## Title.
 
-<h3>Function Name: go_to_booktrip_page()</h3>
-This Function is checking and testing the '/booktrip' page.
+<h3>Function Name: ()</h3>
 
 
-## Store booktrip info from User Through Form.
+## Title.
 
-<h3>Function Name: tripInfo_can_be_added_through_form()</h3>
-Manually Entering all booktrip forms fields data in '/booktrip/store' page using, ('/booktrip/store');
-
+<h3>Function Name: ()</h3>
 
 
+## Title.
+
+<h3>Function Name: ()</h3>
 
